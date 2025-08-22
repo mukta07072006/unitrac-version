@@ -1,1 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Update Available</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gray: {
+                            950: '#030712',
+                            900: '#111827',
+                            800: '#1f2937',
+                        },
+                        blue: {
+                            400: '#60a5fa',
+                            300: '#93c5fd',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #030712;
+            color: white;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .card {
+            background-color: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+        
+        .button {
+            background-color: #2563eb;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            font-size: 1.125rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .button:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+    <div class="fade-in-up max-w-2xl w-full p-6">
+        <div class="card">
+            <div class="p-8 space-y-6">
+                <!-- Header -->
+                <div class="text-center space-y-2">
+                    <h1 class="text-3xl font-bold text-blue-400">
+                        🚀 New Update Available!
+                    </h1>
+                    <p class="text-gray-400">
+                        Experience the best performance and latest features with our newest version.
+                    </p>
+                </div>
 
+                <!-- Image Section -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <img
+                        src="https://placehold.co/400x250/1E293B/FFF?text=Feature+1"
+                        alt="New Feature 1"
+                        class="rounded-xl shadow-md hover-scale"
+                    />
+                    <img
+                        src="https://placehold.co/400x250/1E293B/FFF?text=Feature+2"
+                        alt="New Feature 2"
+                        class="rounded-xl shadow-md hover-scale"
+                    />
+                </div>
+
+                <!-- Update Details -->
+                <div class="space-y-2">
+                    <h2 class="text-xl font-semibold text-blue-300">
+                        ✨ What's New
+                    </h2>
+                    <ul class="list-disc list-inside text-gray-300 space-y-1">
+                        <li>Faster load time and smoother performance</li>
+                        <li>Modern UI with dark theme enhancements</li>
+                        <li>Bug fixes and improved stability</li>
+                        <li>New exciting features added!</li>
+                    </ul>
+                </div>
+
+                <!-- Download Button -->
+                <div class="flex justify-center pt-4">
+                    <button 
+                        onclick="window.open('https://drive.google.com/your-app-download-link', '_blank')"
+                        class="button"
+                    >
+                        Download Now 
+                        <span id="arrow-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Add arrow icon
+        document.getElementById('arrow-icon').innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right">
+                <path d="M5 12h14"/>
+                <path d="m12 5 7 7-7 7"/>
+            </svg>
+        `;
+    </script>
+</body>
+</html>
